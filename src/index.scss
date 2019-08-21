@@ -1,0 +1,113 @@
+.App {
+  width: 600px;
+  display: inline-block;
+}
+
+.add-event-form {
+  margin-bottom: 47px;
+  &__input-text {
+    width: 244px;
+    height: 53px;
+    font-size: 26px;
+    padding: 0 18px;
+    float: left;
+  }
+  &__button-submit {
+    height: 57px;
+    width: 167px;
+    font-size: 26px;
+    color: green;
+    background-color: transparent;
+    outline: 1px solid green;
+    border: unset;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    float: right;
+    &:hover {
+      background-color: rgb(175, 253, 175);
+    }
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.event-list {
+  border-collapse: collapse;
+  width: 100%;
+  &__item {
+    border-bottom: 1px solid gray;
+  }
+}
+
+.event {
+  &__name {
+    font-size: 31px;
+    color: red;
+    border: unset;
+    outline: 1px solid gray;
+    margin: 16px 0px;
+    padding: 5px 13px;
+    &:disabled {
+      outline: unset;
+      background-color: transparent;
+    }
+  }
+
+  &--done {
+    td {
+      position: relative;
+      &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 3px;
+        background-color: black;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+      }
+    }
+  }
+}
+
+.event-action-list {
+  text-align: center;
+  &__item {
+    background: unset;
+    border: unset;
+    color: red;
+    font-size: 30px;
+    cursor: pointer;
+    outline: unset;
+    &--success {
+      color: green;
+      display: none;
+    }
+    &--cancel {
+      display: none;
+    }
+  }
+}
+
+.event-action-list--update-state {
+  .event-action-list__item {
+    &--delete {
+      display: none;
+    }
+    &--set-done {
+      display: none;
+    }
+    &--set-update-state {
+      display: none;
+    }
+    &--success {
+      display: initial;
+    }
+    &--cancel {
+      display: initial;
+    }
+  }
+}
